@@ -71,25 +71,42 @@
 
 public class Main {
 
-    static double distance(int x1, int y1, int x2, int y2) {
-        return Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
-    }
+//    /**
+//     * Для вычисления расстояния между точками на плоскости
+//     * @param x1 Координата Х первой точки
+//     * @param y1 Координата У первой точки
+//     * @param x2 Координата Х второй точки
+//     * @param y2 Координата У второй точки
+//     * @return Расстояние
+//     */
+//    static double distance(int x1, int y1, int x2, int y2) {
+//        return Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
+//    }
+//
+//    static double distance(Point2D a, Point2D b) {
+//        return Math.sqrt(Math.pow(a.getX() - b.getX(), 2) + Math.pow(a.getY() - b.getY(), 2));
+//    }
 
-    static double distance(Point2D a, Point2D b) {
-
-        return Math.sqrt(Math.pow(a.x - b.x, 2) + Math.pow(a.y - b.y, 2));
-    }
     public static void main(String[] args) {
-        Point2D a = new Point2D();
-        a.x = 0;
-        a.y = 2;
-        System.out.println(a.toString());
 
-        Point2D b = new Point2D();
-        b.x = 0;
-        b.y = 10;
-        System.out.println(b.toString());
-        System.out.println(distance(a, b));
+        Point2D a = new Point2D(0, 2); // В классе Point2D есть конструктор, который принимает значения в скобках
+        Point2D b0 = new Point2D(); // В классе Point2D есть конструктор, который вставит нули
+        Point2D b = new Point2D(2); // В классе Point2D есть конструктор, который принимает 1 число для обеих координат
 
+        a.setX(20); // В классе Point2D есть метод для изменения x. Нужен если x - private
+        a.setY(10); // В классе Point2D есть метод для изменения y. Нужен если y - private
+
+        var dis = Point2D.distance(a,b);
+
+        System.out.println(a); // x: 0; y: 2
+        System.out.println(b); // x: 2; y: 2
+//        System.out.println(distance(a, b)); // 2.0
+        System.out.println(dis); // 2.0
+
+        System.out.println(a.getX()); // 0
+        System.out.println(a.getY()); // 2
+
+
+        System.out.println(a.toString()); // x: 20; y: 10
     }
 }
