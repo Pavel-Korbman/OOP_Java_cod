@@ -67,6 +67,7 @@
  */
 
 
+import java.util.*;
 
 
 public class Main {
@@ -88,25 +89,92 @@ public class Main {
 //    }
 
     public static void main(String[] args) {
+//
+//        Point2D a = new Point2D(0, 2); // В классе Point2D есть конструктор, который принимает значения в скобках
+//        Point2D b0 = new Point2D(); // В классе Point2D есть конструктор, который вставит нули
+//        Point2D b = new Point2D(2); // В классе Point2D есть конструктор, который принимает 1 число для обеих координат
+//
+//        a.setX(20); // В классе Point2D есть метод для изменения x. Нужен если x - private
+//        a.setY(10); // В классе Point2D есть метод для изменения y. Нужен если y - private
+//
+//        var dis = Point2D.distance(a,b);
+//
+//        System.out.println(a); // x: 0; y: 2
+//        System.out.println(b); // x: 2; y: 2
+////        System.out.println(distance(a, b)); // 2.0
+//        System.out.println(dis); // 2.0
+//
+//        System.out.println(a.getX()); // 0
+//        System.out.println(a.getY()); // 2
+//
+//
+//        System.out.println(a.toString()); // x: 20; y: 10
 
-        Point2D a = new Point2D(0, 2); // В классе Point2D есть конструктор, который принимает значения в скобках
-        Point2D b0 = new Point2D(); // В классе Point2D есть конструктор, который вставит нули
-        Point2D b = new Point2D(2); // В классе Point2D есть конструктор, который принимает 1 число для обеих координат
+    // ПРИМЕР 2
+    /**
+     * Создаём робота в классе Robot, у которово есть имя и уровень,
+     * он запускается, работает и выключается последовательностью комманд.
+     * startBIOS(); startOS(); sayHi(); work(); sayBye(); stopOS(); stopBIOS();
+     */
+    // #region Robot1 demo
 
-        a.setX(20); // В классе Point2D есть метод для изменения x. Нужен если x - private
-        a.setY(10); // В классе Point2D есть метод для изменения y. Нужен если y - private
+//        Robot1 robot1 = new Robot1("name_1", 1);
+//        robot1.level = 100500;
+//        System.out.printf("%s %d\n", robot1.name, robot1.level);
 
-        var dis = Point2D.distance(a,b);
+        // //#endregion
+        // // #region processing
 
-        System.out.println(a); // x: 0; y: 2
-        System.out.println(b); // x: 2; y: 2
-//        System.out.println(distance(a, b)); // 2.0
-        System.out.println(dis); // 2.0
+//        robot1.startBIOS();
+//        robot1.startOS();
+//        robot1.sayHi();
+//
+//        robot1.work();
+//
+//        robot1.sayBye();
+//        robot1.stopOS();
+//        robot1.stopBIOS();
 
-        System.out.println(a.getX()); // 0
-        System.out.println(a.getY()); // 2
+        // // #endregion
 
+        System.out.println();
+        // #endregion
+/**
+ * Создаём робота в классе Robot2, у которого после создания нельзя менять имя и уровень
+ * и он запускается и выключается командами robot2.powerOn(); и robot2.powerOff();
+ */
+        // #region Robo2 demo
 
-        System.out.println(a.toString()); // x: 20; y: 10
+         Robot2 robot2 = new Robot2("name_2", 1);
+
+         System.out.printf("%s level: %d\n", robot2.getName(), robot2.getLevel());
+
+         robot2.powerOn();
+
+         robot2.work();
+         robot2.work();
+         robot2.work();
+
+         robot2.powerOff();
+
+        // #endregion
+/**
+ * Создаём робота в классе Robot3, у которого после создания нельзя менять имя и уровень
+ * и он запускается и выключается командами robot2.powerOn(); и robot2.powerOff();
+ */
+        //#region Robo3 demo
+
+//    Robot3 robot3 = new Robot3("name_3");
+//        System.out.println("-------------");
+//        System.out.println(robot3);
+//        robot3.power();
+//        robot3.work();
+//        robot3.power();
+//        robot3.work();
+//
+//        robot3.power();
+
+        //#endregion
+
     }
 }
