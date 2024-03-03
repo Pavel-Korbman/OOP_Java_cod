@@ -1,8 +1,16 @@
 
-public class Animal {
-    private String name;
-    public void voice() {
-        System.out.println("Hello i am " + name);
+public abstract class Animal {
+
+    /** protected - разрешает доступ в текущем классе и в классах наследниках */
+    protected String name;
+
+    //    public void voice() {
+//        System.out.println("Hello i am " + name);
+//    }
+    public abstract void voice();
+    // abstract позволяет делать методы без реализации (набросок метода, который будет реализован потом)
+
+    public Animal() {
     }
 
     public Animal(String name) {
