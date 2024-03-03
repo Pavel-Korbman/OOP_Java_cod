@@ -1,3 +1,5 @@
+import java.util.*;
+
 public class Robot3 {
     /** Описываем два возможных варианта поля Состояние */
     enum State {
@@ -52,27 +54,27 @@ public class Robot3 {
 
     // #region другие конструкторы
     /** Конструктор только с именем (уровень задаётся автоматом) */
-    // public Robot3(String name)
-    // {
-    // if ((name.isEmpty()
-    // || Character.isDigit(name.charAt(0)))
-    // || Robot3.names.indexOf(name) == -1)
-
-    // { this.name = String.format("DefaultName_%d", defaultIndex++); }
-    // else { this.name = name; }
-
-    // Robot3.names.add(this.name);
-    // this.level = 1;
-    // this.state = State.Off;
-    // }
-    /** Конструктор конструктор без аргументов (имя и уровень задаются автоматом) */
-    // public Robot3()
-    // {
-    // this.name = String.format("DefaultName_%d", defaultIndex++);
-    // Robot3.names.add(this.name);
-    // this.level = 1;
-    // this.state = State.Off;
-    // }
+//     public Robot3(String name)
+//     {
+//     if ((name.isEmpty()
+//     || Character.isDigit(name.charAt(0)))
+//     || Robot3.names.indexOf(name) != -1)
+//
+//     { this.name = String.format("DefaultName_%d", defaultIndex++); }
+//     else { this.name = name; }
+//
+//     Robot3.names.add(this.name);
+//     this.level = 1;
+//     this.state = State.Off;
+//     }
+//    /** Конструктор конструктор без аргументов (имя и уровень задаются автоматом) */
+//     public Robot3()
+//     {
+//     this.name = String.format("DefaultName_%d", defaultIndex++);
+//     Robot3.names.add(this.name);
+//     this.level = 1;
+//     this.state = State.Off;
+//     }
 
     // #endregion
 

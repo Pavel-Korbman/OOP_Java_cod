@@ -137,7 +137,7 @@ public class Main {
 
         // // #endregion
 
-        System.out.println();
+//        System.out.println();
         // #endregion
 /**
  * Создаём робота в классе Robot2, у которого после создания нельзя менять имя и уровень
@@ -145,17 +145,17 @@ public class Main {
  */
         // #region Robo2 demo
 
-         Robot2 robot2 = new Robot2("name_2", 1);
-
-         System.out.printf("%s level: %d\n", robot2.getName(), robot2.getLevel());
-
-         robot2.powerOn();
-
-         robot2.work();
-         robot2.work();
-         robot2.work();
-
-         robot2.powerOff();
+//         Robot2 robot2 = new Robot2("name_2", 1);
+//
+//         System.out.printf("%s level: %d\n", robot2.getName(), robot2.getLevel());
+//
+//         robot2.powerOn();
+//
+//         robot2.work();
+//         robot2.work();
+//         robot2.work();
+//
+//         robot2.powerOff();
 
         // #endregion
 /**
@@ -175,6 +175,99 @@ public class Main {
 //        robot3.power();
 
         //#endregion
+
+        /**
+         * Создаём игру с 2 персонажами Magician и Priest
+         */
+        /**
+         * 1 вар - два отдельных класса без наследования - много одинакового кода в Magician и Priest
+         */
+
+//        Magician hero1 = new Magician();
+//        System.out.println(hero1.getInfo());
+//
+//        Priest hero2 = new Priest();
+//        System.out.println(hero2.getInfo());
+//
+//        Priest hero3 = new Priest();
+//        System.out.println(hero3.getInfo());
+
+        /**
+         * 2 вар - добавляем базовый класс - описываем общий функционал в BaseHero
+         * и дополняем его в производных классах MagicianN и PriestN
+         */
+//        MagicianN hero1 = new MagicianN();
+//        System.out.println(hero1.getInfo());
+//
+//        PriestN hero2 = new PriestN();
+//        System.out.println(hero2.getInfo());
+//
+//        PriestN hero3 = new PriestN();
+//        System.out.println(hero3.getInfo());
+//
+//        hero3.GetDamage(hero2.Attack());
+//        hero3.GetDamage(hero3.Attack());
+//        System.out.println(hero3.getInfo());
+//        System.out.println(hero2.getInfo());
+        //hero3.GetDamage(hero3.Attack());
+
+
+        /**
+         Полиморфизм. В переменную базового класса BaseHero
+         положили экземпляры из дочерних классов new MagicianN() и new PriestN()
+         */
+
+//         BaseHero hero3 = new MagicianN();
+//         System.out.println(hero3.getInfo());
+//
+//         BaseHero hero4 = new PriestN();
+//         System.out.println(hero4.getInfo());
+
+        // #endregion
+
+        // #region ex2 Attack
+        // System.out.println("------");
+        // System.out.println(hero3.getInfo());
+        // System.out.println(hero4.getInfo());
+
+//        hero3.Attack(hero4);
+//
+//        hero4.Attack(hero3);
+//         System.out.println(hero3.getInfo());
+//         System.out.println(hero4.getInfo());
+
+        // #endregion
+
+        // #region Teams
+
+
+        /**
+         Создаём команду из 10 персонажей
+         */
+        int teamCount = 10;
+        Random rand = new Random();
+        int magicianCount = 0;
+        int priestCount = 0;
+//
+//
+        List<BaseHero> teams = new ArrayList<>();
+        for (int i = 0; i < teamCount; i++) {
+            if (rand.nextInt(2) == 0) {
+                teams.add(new PriestN());
+                priestCount++;
+            }
+            else{
+                teams.add(new MagicianN());
+                magicianCount++;
+            }
+
+            System.out.println(teams.get(i).getInfo());
+        }
+//        System.out.println();
+//        System.out.printf("magicalCount: %d priestCount: %d \n\n", magicianCount, priestCount);
+
+        // attack
+
 
     }
 }
