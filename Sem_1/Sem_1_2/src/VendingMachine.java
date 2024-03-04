@@ -1,14 +1,19 @@
-import java.util.Map;
+import java.util.ArrayList;
 
-class VendingMachine extends Product  {
-    Map<Product> productMap =
+public class VendingMachine {
+    ArrayList<Product> array = new ArrayList<>();
 
-   public void VendingMachine() {
-        System.out.println(products);
+    public void initProduct(ArrayList list){
+        array = list;
     }
 
-    public void getProduct(String name) {
-        System.out.println(products.get(name));
+    public Product getProduct(String name) {
+        for (int i = 0; i < array.size(); i++) {
+            if (array.get(i).name.equals(name)) {
+                return array.get(i);
+            }
+        }
+        return null;
     }
 
 }
