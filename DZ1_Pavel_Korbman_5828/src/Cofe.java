@@ -12,9 +12,9 @@ public class Cofe extends Product {
     @Override
     public String toString() {
         return "Product{" +
-                "name='" + name + '\'' +
-                ", volume= " + volume +
-                "мл"+ ", temperature= " +temperature + "гр}";
+                "название='" + name + '\'' +
+                ", объём= " + volume +
+                "мл"+ ", температура= " +temperature + "°"+", цена= "+cost + "руб}";
     }
 }
 

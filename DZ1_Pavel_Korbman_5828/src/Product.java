@@ -1,6 +1,7 @@
 public abstract class Product {
     protected String name;
     protected int volume;
+    protected Double cost;
 
     public String getName() {
         return name;
@@ -8,6 +9,10 @@ public abstract class Product {
 
     public int getVolume() {
         return volume;
+    }
+
+    public Double getCost() {
+        return cost;
     }
 
     public void setName(String name) {
@@ -18,8 +23,11 @@ public abstract class Product {
         this.volume = volume;
     }
 
-    public abstract int getTemperature();
+    public void setCost(Double cost) {
+        this.cost = cost;
+    }
 
+    public abstract int getTemperature();
     @Override
     public abstract String toString();
 

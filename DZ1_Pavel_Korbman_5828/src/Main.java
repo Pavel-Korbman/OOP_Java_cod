@@ -16,16 +16,19 @@ public class Main {
         Cofe product_1 = new Cofe();
         product_1.setName("Кофе маленький");
         product_1.setVolume(200);
+        product_1.setCost(150.0);
         product_1.setTemperature(90);
 
         Cofe product_2 = new Cofe();
         product_2.setName("Кофе средний");
         product_2.setVolume(300);
+        product_2.setCost(200.0);
         product_2.setTemperature(90);
 
         Cofe product_3 = new Cofe();
         product_3.setName("Кофе большой");
         product_3.setVolume(400);
+        product_2.setCost(250.0);
         product_3.setTemperature(90);
 
         CofeMachine cofeMachine = new CofeMachine();
