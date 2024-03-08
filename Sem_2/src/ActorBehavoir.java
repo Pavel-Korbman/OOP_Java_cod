@@ -1,13 +1,13 @@
 public interface ActorBehavoir {
-    /** Оформление заказа */
-    public abstract void setMakeOrder(String consumer);
+    /** Готовность сделать заказ */
+    public abstract void setMakeOrder();
 
-    /** Получение заказа */
-    public abstract void setTakeOrder(String consumer);
+    /** Готовность забрать заказ */
+    public abstract void setTakeOrder();
 
-    /**Статус заказа - сделал ли актор заказ*/
-    public abstract boolean isMakeOrder(order);
+    /**Заказ оформлен*/
+    abstract void isMakeOrder(Human human);
 
-    /**Статус получения - - получил ли актор заказ*/
-    public abstract boolean isTakeOrder(order);
+    /**Заказ получен*/
+    abstract void isTakeOrder(Human human);
 }

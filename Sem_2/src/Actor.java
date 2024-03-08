@@ -1,13 +1,16 @@
-public abstract class Actor {
-    /** Покупатель - тот, кто оформил заказ в setMakeOrder */
-    protected String name;
+public abstract class Actor implements ActorBehavoir {
 
-    protected abstract String getName(String humanName);
-    protected boolean isMakeOrder(int order){
-        return ;
+
+
+    public void isMakeOrder(Human human){
+        human.orderMake = true;
+        System.out.println(human.getName() + ", Ваш заказ оформлен");
     }
-    protected boolean isTakeOrder(int order){
-        return ;
+
+
+    public void isTakeOrder(Human human){
+        human.orderTake = true;
+        System.out.println(human.getName() + ", Заказ получен");
     }
 
 
