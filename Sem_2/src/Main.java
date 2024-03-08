@@ -10,22 +10,22 @@ public class Main {
 
 //        System.out.println(human_1);
 //        System.out.println(human_1);
-//        System.out.println(human_3);
+        System.out.println(human_3);
 //        System.out.println(human_4);
 //        System.out.println(human_5);
 //        System.out.println(human_6);
 
 
-        human_2.setMakeOrder(true);
-        System.out.println(human_2);
-        human_2.setMakeOrder(true, human_2.isMakeOrder(human_2));
-        System.out.println(human_2);
-        human_2.setTakeOrder(true);
-        System.out.println(human_2);
-        human_2.setTakeOrder(true, human_2.isTakeOrder(human_2));
-        System.out.println(human_2);
+        human_3.setMakeOrder(true);
+        System.out.println(human_3);
+        human_3.setMakeOrder(true, human_3.isMakeOrder(human_3));
+        System.out.println(human_3);
+        human_3.setTakeOrder(true);
+        System.out.println(human_3);
+        human_3.setTakeOrder(true, human_3.isTakeOrder(human_3));
+        System.out.println(human_3);
 
-        System.out.println(Actor);
+        System.out.println();
 
 //        human_1.setMakeOrder(false, human_1.isMakeOrder(human_1));
 //        System.out.println(human_1);

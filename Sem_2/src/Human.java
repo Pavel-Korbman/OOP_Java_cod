@@ -4,42 +4,46 @@ public class Human extends Actor {
     protected int age;
     protected String address;
     protected boolean readyMake;
-    protected boolean orderMake;
-    protected boolean readyTake;
-    protected boolean orderTake;
+//    protected boolean orderMake;
+//    protected boolean readyTake;
+//    protected boolean orderTake;
 
 
     public Human(String name, String gender, int age, String address) {
-        this.name = name;
+//        super();
+        super.name = name;
         this.gender = gender;
         this.age = age;
         this.address = address;
+
     }
 
     public void setMakeOrder(boolean readyMake, boolean orderMake) {
         this.readyMake = readyMake;
         this.orderMake = orderMake;
-        if (readyMake && !orderMake) System.out.println(getName() + ", Можно оформить заказ");
+        if (readyMake && !orderMake) System.out.println(name + ", Можно оформить заказ");
         else if (orderMake) {
-            System.out.println(getName() + ", Заказ оформлен");}
+            System.out.println(name + ", Заказ оформлен");}
     }
 
     public void setMakeOrder(boolean readyMake) {
         this.readyMake = readyMake;
-        if (readyMake) System.out.println(getName() + ", Можно оформить заказ");
+        if (readyMake) {System.out.println(name + ", Можно оформить заказ");
+
+        }
     }
 
     public void setTakeOrder(boolean readyTake, boolean orderTake) {
         this.readyTake = readyTake;
         this.orderTake = orderTake;
-        if (readyTake && !orderTake) System.out.println(getName() + ", Можно забрать заказ");
+        if (readyTake && !orderTake) System.out.println(name + ", Можно забрать заказ");
         else if (orderMake) {
-            System.out.println(getName() + ", Заказ получен");
+            System.out.println(name + ", Заказ получен");
         }
     }
     public void setTakeOrder(boolean readyTake) {
         this.readyTake = readyTake;
-        if (readyMake) System.out.println(getName() + ", Можно забрать заказ");
+        if (readyMake) System.out.println(name + ", Можно забрать заказ");
     }
 
     public String getName() {
@@ -60,6 +64,18 @@ public class Human extends Actor {
 
     public boolean isReadyMake() {
         return readyMake;
+    }
+
+    public boolean isOrderMake() {
+        return orderMake;
+    }
+
+    public boolean isReadyTake() {
+        return readyTake;
+    }
+
+    public boolean isOrderTake() {
+        return orderTake;
     }
 
     public void setName(String name) {
@@ -85,18 +101,6 @@ public class Human extends Actor {
     public void setOrderTake(boolean orderTake) {
         this.orderTake = orderTake;
     }
-
-//    @Override
-//    public String toString() {
-//        return "Human{" +
-//                "name='" + name + '\'' +
-//                ", gender='" + gender + '\'' +
-//                ", age=" + age +
-//                ", address='" + address + '\'' +
-//                ", orderMake=" + orderMake +
-//                ", orderTake=" + orderTake +
-//                '}';
-//    }
 
 
     @Override
