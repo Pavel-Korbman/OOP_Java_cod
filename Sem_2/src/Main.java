@@ -25,6 +25,8 @@ public class Main {
         human_2.setTakeOrder(true, human_2.isTakeOrder(human_2));
         System.out.println(human_2);
 
+        System.out.println(Actor);
+
 //        human_1.setMakeOrder(false, human_1.isMakeOrder(human_1));
 //        System.out.println(human_1);
 
