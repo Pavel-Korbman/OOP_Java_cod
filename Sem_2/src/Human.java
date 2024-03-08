@@ -1,9 +1,11 @@
 public class Human extends Actor {
-    protected String name;
+    //    protected String name;
     protected String gender;
     protected int age;
     protected String address;
+    protected boolean readyMake;
     protected boolean orderMake;
+    protected boolean readyTake;
     protected boolean orderTake;
 
 
@@ -14,14 +16,30 @@ public class Human extends Actor {
         this.address = address;
     }
 
-    public void setMakeOrder(){
-        this.orderMake = false;
-        System.out.println(getName() + ", Вы можете оформить заказ");
+    public void setMakeOrder(boolean readyMake, boolean orderMake) {
+        this.readyMake = readyMake;
+        this.orderMake = orderMake;
+        if (readyMake && !orderMake) System.out.println(getName() + ", Можно оформить заказ");
+        else if (orderMake) {
+            System.out.println(getName() + ", Заказ оформлен");}
     }
 
-    public void setTakeOrder(){
-        this.orderTake = false;
-        System.out.println(getName() + ", Вы можете получить заказ");
+    public void setMakeOrder(boolean readyMake) {
+        this.readyMake = readyMake;
+        if (readyMake) System.out.println(getName() + ", Можно оформить заказ");
+    }
+
+    public void setTakeOrder(boolean readyTake, boolean orderTake) {
+        this.readyTake = readyTake;
+        this.orderTake = orderTake;
+        if (readyTake && !orderTake) System.out.println(getName() + ", Можно забрать заказ");
+        else if (orderMake) {
+            System.out.println(getName() + ", Заказ получен");
+        }
+    }
+    public void setTakeOrder(boolean readyTake) {
+        this.readyTake = readyTake;
+        if (readyMake) System.out.println(getName() + ", Можно забрать заказ");
     }
 
     public String getName() {
@@ -38,6 +56,10 @@ public class Human extends Actor {
 
     public String getAddress() {
         return address;
+    }
+
+    public boolean isReadyMake() {
+        return readyMake;
     }
 
     public void setName(String name) {
@@ -64,14 +86,29 @@ public class Human extends Actor {
         this.orderTake = orderTake;
     }
 
+//    @Override
+//    public String toString() {
+//        return "Human{" +
+//                "name='" + name + '\'' +
+//                ", gender='" + gender + '\'' +
+//                ", age=" + age +
+//                ", address='" + address + '\'' +
+//                ", orderMake=" + orderMake +
+//                ", orderTake=" + orderTake +
+//                '}';
+//    }
+
+
     @Override
     public String toString() {
         return "Human{" +
                 "name='" + name + '\'' +
-                ", gender='" + gender + '\'' +
+                "gender='" + gender + '\'' +
                 ", age=" + age +
                 ", address='" + address + '\'' +
+                ", readyMake=" + readyMake +
                 ", orderMake=" + orderMake +
+                ", readyTake=" + readyTake +
                 ", orderTake=" + orderTake +
                 '}';
     }

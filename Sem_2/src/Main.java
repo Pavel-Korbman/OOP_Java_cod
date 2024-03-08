@@ -1,5 +1,4 @@
 
-
 public class Main {
     public static void main(String[] args) {
         Human human_1 = new Human("Павел", "м", 54, "Москва");
@@ -10,18 +9,25 @@ public class Main {
         Human human_6 = new Human("Андрей", "м", 44, "Москва");
 
 //        System.out.println(human_1);
-        System.out.println(human_2);
+//        System.out.println(human_1);
 //        System.out.println(human_3);
 //        System.out.println(human_4);
 //        System.out.println(human_5);
 //        System.out.println(human_6);
 
-        human_2.setMakeOrder();
+
+        human_2.setMakeOrder(true);
         System.out.println(human_2);
-        human_2.isMakeOrder(human_2);
+        human_2.setMakeOrder(true, human_2.isMakeOrder(human_2));
         System.out.println(human_2);
-        human_2.isTakeOrder(human_2);
+        human_2.setTakeOrder(true);
         System.out.println(human_2);
+        human_2.setTakeOrder(true, human_2.isTakeOrder(human_2));
+        System.out.println(human_2);
+
+//        human_1.setMakeOrder(false, human_1.isMakeOrder(human_1));
+//        System.out.println(human_1);
+
 
     }
 }

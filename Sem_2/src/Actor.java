@@ -1,17 +1,25 @@
-public abstract class Actor implements ActorBehavoir {
+public abstract class Actor implements ActorBehaviour {
+    protected String name;
 
 
 
-    public void isMakeOrder(Human human){
-        human.orderMake = true;
-        System.out.println(human.getName() + ", Ваш заказ оформлен");
+     public boolean isMakeOrder(Human human){
+        if (human.readyMake) return true;
+        else {
+            System.out.println(human.getName() + ", Подтвердите готовность оформить заказ");
+            return false;
+        }
     }
 
 
-    public void isTakeOrder(Human human){
-        human.orderTake = true;
-        System.out.println(human.getName() + ", Заказ получен");
+     public boolean isTakeOrder(Human human){
+        if (human.readyTake) return true;
+        else {
+            System.out.println(human.getName() + ", Подтвердите готовность получить заказ");
+            return false;
+        }
     }
 
+    public abstract String getName();
 
 }
