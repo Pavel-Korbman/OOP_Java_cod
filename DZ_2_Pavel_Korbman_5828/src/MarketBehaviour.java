@@ -2,18 +2,19 @@ import java.util.ArrayList;
 
 public interface MarketBehaviour {
     /**
-     * Прийти в магазин
+     * Добавляет в магазин
+     *
      * @param actor
      */
-    void acceptToMarket(Actor actor);
+    static void acceptToMarket(Actor actor) {}
 
     /**
-     * Уйти из магазина
+     * Убирает из магазина
      */
-    void releaseFromMarket(ArrayList<Actor> out); // нужно несколько
+    static void releaseFromMarket(ArrayList<Actor> out) {}
 
     /**
-     * Обновить состояния магазина (принимает и отдает заказы)
+     * Обновляет состояния магазина
      */
-    void update();
+    static void update() {}
 }

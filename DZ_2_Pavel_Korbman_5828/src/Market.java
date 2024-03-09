@@ -4,71 +4,64 @@ import java.util.Queue;
 
 public class Market implements QueueBehaviour, MarketBehaviour {
     protected String name;
-    //    Actor actor;
     static Queue<Actor> queue = new LinkedList<>();
     static ArrayList<Actor> inMarket = new ArrayList<>();
-    static ArrayList<Actor> out = new ArrayList<>();
+    private static ArrayList<Actor> exit = new ArrayList<>();
 
-    public void acceptToMarket(Actor actor) {
-//        actor.setInMarket(true);
+    public static void acceptToMarket(Actor actor) {
         inMarket.add(actor);
-        System.out.println("В магазине"+ inMarket.size()+ "чел:" + inMarket);
     }
 
-    public void takeOrders() {
-//        for (Actor val : inMarket) {
+    protected static void takeOrders() {
         inMarket.getFirst().setOrder(true);
-        System.out.println(inMarket.getFirst());
+        System.out.println("Заказ: " + inMarket.getFirst());
+        inMarket.add(inMarket.getFirst());
         inMarket.remove(inMarket.getFirst());
-//        }
     }
 
-
-    public void takeInQueue(Actor actor) {
-        if (actor.getOrder()) queue.add(actor);
+    private static void takeInQueue(Actor actor) {
+        if (actor.getOrder() && !actor.isOrderGet()) queue.add(actor);
         actor.setInQueue(true);
-        System.out.println("В очереди"+ queue.size()+ "чел:" + getQueue().toString());
     }
 
-    public void giveOrders() {
+    private static void giveOrders() {
         if (!queue.isEmpty()) {
             queue.peek().setOrderGet(true);
-//            queue.peek().setOrder(false);
+            System.out.println("Заказ получен: " + queue.peek());
             releaseFromQueue();
-        } else System.out.println("Очередь пуста");
-        System.out.println("В очереди "+ queue.size()+ "чел:" + getQueue().toString());
+        }
     }
 
-    public void releaseFromQueue() {
+    private static void releaseFromQueue() {
         queue.remove(queue.peek());
     }
 
-    public void releaseFromMarket(ArrayList<Actor> out) {
-        for (Actor val : inMarket) {
-            if (val.isOrderGet() && out.contains(val)) inMarket.remove(val);
+    public static void releaseFromMarket(ArrayList<Actor> out) {
+        for (int i = 0; i < inMarket.size(); i++) {
+            if (out.contains(inMarket.get(i))&&(inMarket.get(i).isOrderGet() || !inMarket.get(i).getOrder())){
+//                inMarket.remove(inMarket.get(i));
+                exit.add(inMarket.get(i));
+            }
         }
-        System.out.println("В магазине:" + inMarket);
+        inMarket.removeAll(exit);
+        System.out.println("В магазине " + inMarket.size() + "чел: " + inMarket);
     }
 
-    public void update() {
-        takeOrders();
-        for (Actor val : inMarket) {
-            if(val.getOrder()) takeInQueue(val);
-        }
-        giveOrders();
-//        System.out.println("В очереди:" + queue.toString());
+    public static void update() {
+        for (Actor val : inMarket) {takeInQueue(val);}
+        System.out.println("В очереди " + queue.size() + "чел: " + getQueue().toString());
+//        System.out.println();
+        for (int i = 0; i <= queue.size()+2; i++) {giveOrders();        }
+        System.out.println("В очереди " + queue.size() + "чел: " + getQueue().toString());
+        System.out.println();
     }
 
-    public Queue<Actor> getQueue() {
+    public static Queue<Actor> getQueue() {
         return queue;
     }
 
     public static ArrayList<Actor> getInMarket() {
         return inMarket;
-    }
-
-    public static void setOut(ArrayList<Actor> out) {
-        Market.out = out;
     }
 
     @Override
@@ -78,6 +71,5 @@ public class Market implements QueueBehaviour, MarketBehaviour {
                 ", inMarket=" + inMarket +
                 '}';
     }
-
 
 }

@@ -1,23 +1,24 @@
 import java.util.ArrayList;
 public interface QueueBehaviour {
     /**
-     * Поставить в очередь
+     * Ставит в очередь
+     *
      * @param actor
      */
-    void takeInQueue(Actor actor);
+    static void takeInQueue(Actor actor) {}
 
     /**
-     * Прининять заказ
+     * Принимает заказ
      */
-    void takeOrders();
+    static void takeOrders() {}
 
     /**
-     * Отдать заказ
+     * Отдаёт заказ
      */
-    void giveOrders();
+    static void giveOrders() {}
 
     /**
-     * Убрать из очереди
+     * Убирает из очереди
      */
-    void releaseFromQueue();
+    static void releaseFromQueue() {}
 }
