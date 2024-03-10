@@ -38,8 +38,7 @@ public class Market implements QueueBehaviour, MarketBehaviour {
 
     public static void releaseFromMarket(ArrayList<Actor> out) {
         for (int i = 0; i < inMarket.size(); i++) {
-            if (out.contains(inMarket.get(i))&&(inMarket.get(i).isOrderGet() || !inMarket.get(i).getOrder())){
-//                inMarket.remove(inMarket.get(i));
+            if (out.contains(inMarket.get(i)) && (inMarket.get(i).isOrderGet() || !inMarket.get(i).getOrder())) {
                 exit.add(inMarket.get(i));
             }
         }
@@ -48,10 +47,14 @@ public class Market implements QueueBehaviour, MarketBehaviour {
     }
 
     public static void update() {
-        for (Actor val : inMarket) {takeInQueue(val);}
+        for (Actor val : inMarket) {
+            takeInQueue(val);
+        }
         System.out.println("В очереди " + queue.size() + "чел: " + getQueue().toString());
-//        System.out.println();
-        for (int i = 0; i <= queue.size()+2; i++) {giveOrders();        }
+        int n = queue.size();
+        for (int i = 0; i < n; i++) {
+            giveOrders();
+        }
         System.out.println("В очереди " + queue.size() + "чел: " + getQueue().toString());
         System.out.println();
     }

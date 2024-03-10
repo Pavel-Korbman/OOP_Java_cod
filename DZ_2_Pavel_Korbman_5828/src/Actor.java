@@ -15,10 +15,6 @@ public class Actor extends Market {
         return order;
     }
 
-    public boolean isInQueue() {
-        return inQueue;
-    }
-
     public boolean isOrderGet() {
         return orderGet;
     }
