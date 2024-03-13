@@ -56,7 +56,7 @@ public class Main {
         Worker w1 = new Worker("Имя", "Фамилия", 20, 20);
         Worker w2 = new Worker("Имя", "Фамилия", 20, 20);
         System.out.println(workers1);
-        workers1.sort((w1, w2));
+
 
         //#endregion
     }
