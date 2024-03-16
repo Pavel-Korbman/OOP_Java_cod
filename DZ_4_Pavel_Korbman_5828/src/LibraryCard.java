@@ -1,4 +1,3 @@
-import java.util.Objects;
 
 public class LibraryCard <K, V> extends Book{
     private K iD;
@@ -42,7 +41,6 @@ public class LibraryCard <K, V> extends Book{
         return "Card" + "_iD:" + iD +
                 "{книга: " + book.getTitle() +", "
                 +"автор: " + book.getAuthor()+", " +
-
                 ", выдана: " + bookInfo +
                 '}';
     }
