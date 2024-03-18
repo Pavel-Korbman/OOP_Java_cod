@@ -1,4 +1,4 @@
-public class PresenterOfT<T extends CalcModel> {
+public class PresenterOfT<T extends DataModel> {
     View view;
     Model model;
 
