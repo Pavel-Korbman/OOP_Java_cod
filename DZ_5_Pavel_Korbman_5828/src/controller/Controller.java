@@ -24,13 +24,13 @@ public class Controller {
         return dataService.read(type);
     }
 
-    public void buttonClic(){
+    public void buttonClick(){
         Menu menu = new Menu();
         StudentView studentView = new StudentView();
         TeacherView teacherView = new TeacherView();
-        int val = menu.startMenu();
-        if (val == 1) studentView.printStudents(Read("students"));
-        if (val == 2) teacherView.printTeachers(Read("teachers"));
+        String val = menu.startMenu();
+        if (val.equals("1")) studentView.printStudents(Read("students"));
+        if (val.equals("2")) teacherView.printTeachers(Read("teachers"));
         else System.out.println("Вы ввели не правильную команду");
     }
 

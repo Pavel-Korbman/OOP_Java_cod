@@ -1,8 +1,6 @@
 import controller.Controller;
 import data.Student;
 import data.Teacher;
-import data.User;
-import service.DataService;
 
 public class Main {
     public static void main(String[] args) {
@@ -21,10 +19,7 @@ public class Main {
         controller.createTeacher(teacher2);
         controller.createTeacher(teacher3);
 
-        controller.buttonClic();
-
-//        System.out.println(controller.Read("students"));
-//        System.out.println(controller.Read("teachers"));
+        controller.buttonClick();
 
     }
 }
