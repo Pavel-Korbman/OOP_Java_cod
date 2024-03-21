@@ -1,11 +1,14 @@
-
-
 import java.util.ArrayList;
 import java.util.List;
-
+/**
+ * программа для ведения дневника (записной книжки)
+ */
 // Single responsibility principle	
 // Принцип единственной ответственности
-// У класса есть предназначение
+// У класса должно быть одно предназначение (инкапсулированное в нём)
+// и одна причина по которой он может быть изменён
+
+/** Здесь всё все методы в Planner*/
 
 public class Ex001_1SRP {
     public static void main(String[] args) {
