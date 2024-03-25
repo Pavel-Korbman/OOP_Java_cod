@@ -1,8 +1,8 @@
 import java.util.HashMap;
 import java.util.Map;
 
-public class Warenhouse <T extends Product, U extends Supplier>{
-    protected Map <T,U> inventory = new HashMap<>();
+public class Warenhouse<T extends Product, U extends Supplier> implements Add, Del {
+    protected Map<T, U> inventory = new HashMap<>();
 
     public Warenhouse() {
 
@@ -22,11 +22,17 @@ public class Warenhouse <T extends Product, U extends Supplier>{
                 "Товар:" + inventory +
                 '}';
     }
-    public void addProduct (T product, U supplier){
-        inventory.put(product, supplier);
+//    public void addProduct (T product, U supplier){
+//        inventory.put(product, supplier);
+//    }
+
+    public void del(Object product) {
+        inventory.remove((T) product);
     }
 
-    public void delProduct (T product){
-        inventory.remove(product);
+
+    @Override
+    public void add(Object product, Object supplier) {
+        inventory.put((T) product, (U) supplier);
     }
 }
