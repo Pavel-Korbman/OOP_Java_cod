@@ -11,6 +11,23 @@ public class GoodSupplier extends Supplier {
         this.name = name;
         this.rating = rating;
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public double getRating() {
+        return rating;
+    }
+
+    public void setRating(double rating) {
+        this.rating = rating;
+    }
+
     public String toString() {
         return "поставщик: '" + name + '\'' +
                 ", рейтинг" + rating + '}';
