@@ -36,11 +36,5 @@ public class Product {
         this.quantity = quantity;
     }
 
-//    @Override
-//    public String toString() {
-//        return name + '\'' +
-//                ", цена(руб/кг): " + cost +
-//                ", количество(кг): " + quantity +
-//                '}';
-//    }
+
 }

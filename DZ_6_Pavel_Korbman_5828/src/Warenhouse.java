@@ -22,9 +22,6 @@ public class Warenhouse<T extends Product, U extends Supplier> implements Add, D
                 "Товар:" + inventory +
                 '}';
     }
-//    public void addProduct (T product, U supplier){
-//        inventory.put(product, supplier);
-//    }
 
     public void del(Object product) {
         inventory.remove((T) product);
