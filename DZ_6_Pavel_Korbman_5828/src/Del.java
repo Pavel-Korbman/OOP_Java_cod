@@ -5,5 +5,5 @@
  * @param <Object>>
  */
 public interface Del<Object>{
-    public void del(Object product);
+    void del(Object product);
 }

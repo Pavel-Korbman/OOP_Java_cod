@@ -4,7 +4,6 @@
  * @param <Object>
  */
 public interface Add<Object>{
-    public abstract void add(Object product, Object supplier);
-
+    void add(Object product, Object supplier);
 
 }
