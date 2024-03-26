@@ -1,12 +1,13 @@
 public interface Model {
-    double resultP1();
-    double resultP2();
-    double resultM1();
-    double resultM2();
-    double resultD1();
-    double resultD2();
-    double resultDi1();
-    double resultDi2();
+    double sum1();
+    double sum2();
+    double multi1();
+    double multi2();
+    double dif1();
+    double dif2();
+    double divide1();
+    double divide2();
+
 
     void setX(double value);
     void setY(double value);

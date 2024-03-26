@@ -1,3 +1,4 @@
+import java.io.IOException;
 import java.util.Scanner;
 
 public class View {
@@ -13,9 +14,15 @@ public class View {
         return in.next();
     }
 
-    public void print(double data1, double data2, String title) {
-        if (data2>=0) System.out.printf("%s %.3f +%.3fi\n", title, data1, data2);
-        else System.out.printf("%s %.3f %.3fi\n", title, data1, data2);
+    public void print(double data1, double data2, String title) throws IOException {
+        if (data2>=0) {
+            System.out.printf("%s %.3f +%.3fi\n", title, data1, data2);
+            Logger.logger(title+data1+"+"+data2+"i");
+        }else {
+            System.out.printf("%s %.3f %.3fi\n", title, data1, data2);
+            Logger.logger(title+data1+data2+"i");
+        }
+
     }
 
 }
