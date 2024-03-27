@@ -21,16 +21,8 @@ public class Presenter {
         model.setX1(c);
         model.setY1(d);
 
-        if (operation.equals("+")) {
-            view.print(model.sum1(), model.sum2(),"Сумма: ");
-        } else if (operation.equals("*")){
-            view.print(model.multi1(), model.multi2(), "Произведение: ");
-        } else if (operation.equals("-")){
-            view.print(model.dif1(), model.dif2(), "Разница: ");
-        } else if (operation.equals("/")){
-            view.print(model.divide1(), model.divide2(), "Частное: ");
-        } else System.out.println("Ошибка! Вы ввели несуществующую операцию: " + operation);
-
+        Controller controller = new Controller(model, view);
+        controller.calculate(operation);
     }
 
 }

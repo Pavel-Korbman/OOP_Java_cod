@@ -2,6 +2,7 @@ public class CalcModel extends DataModel {
 
     public CalcModel() {
     }
+
     @Override
     public double sum1() { return x + x1; }
     @Override
@@ -18,5 +19,6 @@ public class CalcModel extends DataModel {
     public double divide1() { return (double) (x * x1 + y * y1) / (Math.pow(x1, 2) + Math.pow(y1, 2)); }
     @Override
     public double divide2() { return (double) (y * x1 - x * y1) / (Math.pow(x1, 2) + Math.pow(y1, 2)); }
+
 
 }

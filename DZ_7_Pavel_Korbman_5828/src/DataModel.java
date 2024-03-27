@@ -1,5 +1,6 @@
 public abstract class DataModel implements Model {
     double x, y, x1, y1;
+
     @Override
     public void setX(double value) { x = value; }
     @Override
