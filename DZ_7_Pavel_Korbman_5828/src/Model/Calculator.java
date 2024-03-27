@@ -1,3 +1,5 @@
+package Model;
+
 public class Calculator extends DataModel {
 
     public Calculator() {

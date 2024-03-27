@@ -1,3 +1,5 @@
+package Model;
+
 public interface Model {
     double sum1();
     double sum2();

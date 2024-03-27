@@ -1,3 +1,7 @@
+package Controller;
+
+import Model.Model;
+import View.View;
 import java.io.IOException;
 
 public class Controller extends Presenter {

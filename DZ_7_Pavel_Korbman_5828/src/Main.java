@@ -4,6 +4,10 @@
 Соблюдать принципы SOLID, паттерны проектирования.
  */
 
+import Controller.Presenter;
+import Model.Calculator;
+import View.View;
+
 import java.io.IOException;
 
 public class Main {
