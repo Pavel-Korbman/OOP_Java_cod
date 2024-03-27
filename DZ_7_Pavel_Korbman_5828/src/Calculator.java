@@ -1,6 +1,6 @@
-public class CalcModel extends DataModel {
+public class Calculator extends DataModel {
 
-    public CalcModel() {
+    public Calculator() {
     }
 
     @Override

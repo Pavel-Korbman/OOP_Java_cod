@@ -8,7 +8,7 @@ import java.io.IOException;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        Presenter p = new Presenter(new CalcModel(), new View());
+        Presenter p = new Presenter(new Calculator(), new View());
         p.buttonClick();
 
     }
